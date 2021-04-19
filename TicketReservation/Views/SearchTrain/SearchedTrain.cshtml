@@ -1,0 +1,106 @@
+﻿@model IEnumerable<TicketReservation.Models.TrainDetail>
+@*@{
+        ViewData["Title"] = "SearchedTrain";
+        Layout = null;
+    }*@
+
+<head>
+    <link href="~/css/SearchedTrain.css" rel="stylesheet" />
+</head>
+
+<h1>Trains Available</h1>
+@*
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<body style="background-color:dimgrey">
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TrainNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TrainName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FromStation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ToStation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.JourneyDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SeatAvailA)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SeatAvailB)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SeatAvailC)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FareA)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FareB)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FareC)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TrainNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TrainName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FromStation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ToStation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JourneyDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SeatAvailA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SeatAvailB)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SeatAvailC)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FareA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FareB)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FareC)
+                        </td>
+                        <td>
+                            @Html.ActionLink("BookTicket Now", "AddBookingDetail", "BookingDetail", new { id = item.TrainNo, from = item.FromStation, to = item.ToStation, ClassA = item.SeatAvailA, ClassB = item.SeatAvailB, ClassC = item.SeatAvailC }, null)
+                            @*    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </center>
+</body>

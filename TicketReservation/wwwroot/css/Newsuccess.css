@@ -1,0 +1,8 @@
+﻿body {
+    margin: 0;
+    background-image: url('../Images/Success.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px; /* You must set a specified height */
+    background-position: center;
+}

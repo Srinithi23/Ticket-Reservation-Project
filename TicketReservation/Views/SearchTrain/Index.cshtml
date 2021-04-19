@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TicketReservation.Models.SearchTrain>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FromStation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToStation)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.searchTrain)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromStation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToStation)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.searchTrain)
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

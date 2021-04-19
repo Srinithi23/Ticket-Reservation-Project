@@ -1,0 +1,121 @@
+﻿@model TicketReservation.Models.Bookingdetails
+
+@{
+    ViewData["Title"] = "AddBookingDetail";
+}
+
+<head>
+    <link href="~/css/AddBookingDetail.css" rel="stylesheet" />
+</head>
+
+
+
+@*<style>
+    #submitButton {
+        border: none;
+        outline: none;
+        height: 60px;
+        background-color: blue;
+        color: whitesmoke;
+        font-size: 30px;
+        border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid whitesmoke;
+        width: 100%;
+    }
+
+    .registerBox input {
+        width: 80%;
+        border: none;
+        border-bottom: 1px solid grey;
+        background: transparent;
+        outline: none;
+        height: 30px;
+        font-family: "sans-seriff";
+    }
+
+    #submitButton:hover {
+        cursor: pointer;
+        background-color: mediumblue;
+    }
+
+    .box {
+        background-color: cornflowerblue;
+        width: 500px;
+        border: 20px white;
+        padding: 50px;
+        margin: 30px;
+    }
+</style>*@
+
+<body>
+        <hr />
+        <div class="box">
+            <div class="registerBox input">
+                <form asp-action="AddBookingDetail">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @*<div class="form-group">
+                        <label asp-for="BookingId" class="control-label"></label>
+                        <input asp-for="BookingId" class="form-control" />
+                        <span asp-validation-for="BookingId" class="text-danger"></span>
+                    </div>*@
+                    <div class="form-group">
+                        <label asp-for="EmailId" class="control-label"></label>
+                        <input asp-for="EmailId" class="form-control" />
+                        <span asp-validation-for="EmailId" class="text-danger"></span>
+                    </div>
+                    @*<div class="form-group">*@
+                        @*  <label asp-for="TrainNo" class="control-label"></label>
+                            <input asp-for="TrainNo" class="form-control" />
+                            <span asp-validation-for="TrainNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FromStation" class="control-label"></label>
+                            <input asp-for="FromStation" class="form-control" />
+                            <span asp-validation-for="FromStation" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ToStation" class="control-label"></label>
+                            <input asp-for="ToStation" class="form-control" />
+                            <span asp-validation-for="ToStation" class="text-danger"></span>*@
+                    
+                    <div class="form-group">
+                        <label asp-for="JourneyDate" class="control-label"></label>
+                        <input asp-for="JourneyDate" class="form-control" />
+                        <span asp-validation-for="JourneyDate" class="text-danger"></span>
+                       
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NoOfSeats" class="control-label"></label>
+                        <input asp-for="NoOfSeats" class="form-control" />
+                        <span asp-validation-for="NoOfSeats" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BookingStatus" class="control-label"></label>
+                        <input asp-for="BookingStatus" type="radio" value="ClassA" class="form-control" />ClassA
+                        <input asp-for="BookingStatus" type="radio" value="ClassB" class="form-control" />ClassB
+                        <input asp-for="BookingStatus" type="radio" value="ClassC" class="form-control" />ClassC
+                        <span asp-validation-for="BookingStatus" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5 col-md-10">
+                            <input type="submit" value="View Booking Details" class="btn btn-default" id="submitButton" />
+                        </div>
+                    </div>
+                    @* <div class="form-group">
+                        <input type="submit" value="View Booking Details" class="btn btn-primary" />
+                    </div>*@
+                </form>
+            </div>
+        </div>
+        @*@Html.ActionLink("AddPassenger", "AddPassenger", "PassengerDetail", new { id = item.TrainNo, email = item.EmailId }, null)*@
+
+       
+        @*<div>
+            <a asp-action="Index">Back to List</a>
+        </div>*@
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+</body>

@@ -1,0 +1,103 @@
+﻿@model IEnumerable<TicketReservation.Models.TrainDetail>
+
+<body style="background-color:dimgrey">
+    @{
+        if (Model != null)
+        {
+            <h1> TRAIN DETAILS </h1>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TrainNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TrainName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FromStation)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToStation)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.JourneyDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SeatAvailA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SeatAvailB)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SeatAvailC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FareA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FareB)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FareC)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TrainNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TrainName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FromStation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ToStation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JourneyDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SeatAvailA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SeatAvailB)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SeatAvailC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FareA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FareB)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FareC)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Book Ticket", "AddBookingDetail", "BookingDetail", new { @*id=item.PrimaryKey*@})
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h3>No Trains Found on your search</h3>
+        }
+    }
+
+</body>

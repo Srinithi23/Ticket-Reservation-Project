@@ -1,0 +1,117 @@
+﻿@model TicketReservation.Models.PassengerDetail
+
+@{
+    ViewData["Title"] = "AddPassenger";
+}
+
+<head>
+    <link href="~/css/AddPassenger.css" rel="stylesheet" />
+</head>
+
+@*<style>
+    #submitButton {
+        border: none;
+        outline: none;
+        height: 60px;
+        background-color: blue;
+        color: whitesmoke;
+        font-size: 30px;
+        border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid whitesmoke;
+        width: 100%;
+    }
+
+    .registerBox input {
+        width: 80%;
+        border: none;
+        border-bottom: 1px solid grey;
+        background: transparent;
+        outline: none;
+        height: 30px;
+        font-family: "sans-seriff";
+    }
+
+    #submitButton:hover {
+        cursor: pointer;
+        background-color: mediumblue;
+    }
+
+    .box {
+        background-color: cornflowerblue;
+        width: 500px;
+        border: 20px white;
+        padding: 50px;
+        margin: 30px;
+    }
+</style>*@
+
+<body style="background-color:dimgrey">
+    <center>
+
+
+        <h1>AddPassenger</h1>
+
+        @*<h4>PassengerDetail</h4>*@
+        <hr />
+        <div class="box">
+            <div class="registerBox input">
+                <form asp-action="AddPassenger">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @*<div class="form-group">
+                            <label asp-for="SerialNo" class="control-label"></label>
+                            <input asp-for="SerialNo" class="form-control" />
+                            <span asp-validation-for="SerialNo" class="text-danger"></span>
+                        </div>*@
+                    @*<div class="form-group">
+                            <label asp-for="TrainNo" class="control-label"></label>
+                            <input asp-for="TrainNo" class="form-control" placeholder="Enter Train Number"/>
+                            <span asp-validation-for="TrainNo" class="text-danger"></span>
+                        </div>*@
+                    <div class="form-group">
+                        <label asp-for="PassengerName" class="control-label font-weight-bold text-white"></label>
+                        <input asp-for="PassengerName" class="form-control" placeholder="Enter Name" />
+                        <span asp-validation-for="PassengerName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label font-weight-bold text-white"></label>
+                        <input asp-for="Gender" class="form-control" placeholder="Male or Female" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Age" class="control-label font-weight-bold text-white"></label>
+                        <input asp-for="Age" class="form-control" placeholder="Enter age" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                    @*    <div class="form-group">
+                            <label asp-for="EmailId" class="control-label"></label>
+                            <input asp-for="EmailId" class="form-control" placeholder="Enter Registered EmailId"/>
+                            <span asp-validation-for="EmailId" class="text-danger"></span>
+                        </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-5 col-md-10">
+                            <input type="submit" value="Submit" class="btn btn-default" id="submitButton" />
+                        </div>
+                    </div>
+
+
+
+
+
+                    @*<div class="form-group">
+                            <input type="submit" value="Submit" class="btn btn-primary" />
+                        </div>*@
+                </form>
+            </div>
+        </div>
+
+        @*<div>
+                <a asp-action="Index">View Passenger Detail</a>
+            </div>*@
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    </center>
+</body>

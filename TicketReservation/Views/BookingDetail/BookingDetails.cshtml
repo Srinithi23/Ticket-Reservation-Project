@@ -1,0 +1,75 @@
+﻿@model TicketReservation.Models.Bookingdetails
+
+    <head>
+        <link href="~/css/BookingDetail.css" rel="stylesheet" />
+    </head>
+
+@{
+    ViewData["Title"] = "BookingDetails";
+}
+<body style="background-color:dimgrey">
+
+    <h1>BookingDetails</h1>
+
+    <div>
+        <h4>Bookingdetails</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BookingId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BookingId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EmailId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EmailId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TrainNo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TrainNo)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FromStation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FromStation)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ToStation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ToStation)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.JourneyDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.JourneyDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NoOfSeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NoOfSeats)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BookingStatus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BookingStatus)
+            </dd>
+        </dl>
+    </div>
+    <div>
+
+        @Html.ActionLink("Add Passenger", "AddPassenger", "PassengerDetail", new { id = Model.TrainNo, email = Model.EmailId })
+
+
+        @*<a asp-action="Index">Back to List</a>*@
+    </div>
+    </body>

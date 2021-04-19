@@ -1,0 +1,93 @@
+﻿@model TicketReservation.Models.PassengerDetail
+
+
+    <head>
+        <link href="~/css/Newsuccess.css" rel="stylesheet" />
+    </head>
+
+    <body style="background-color:dimgrey">
+        <center>
+            <h1 style="background-color:aliceblue">Your Ticket has been booked Successfully.</h1>
+
+            <br /> <br /> <br /> <br /> 
+            
+            <h1 style="background-color: aliceblue"> THANK YOU </h1>
+            <br /> <br /> <br /> <br /> <br /><br />
+
+            @Html.ActionLink("Home", "SearchTrain", "SearchTrain", new { @*id = item.TrainNo,
+        from = item.FromStation, to = item.ToStation*@}, null)
+        </center>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*
+        @{
+            ViewData["Title"] = "Success";
+        }
+
+        <h1>Success</h1>
+
+        <h4>PassengerDetail</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Success">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="SerialNo" class="control-label"></label>
+                        <input asp-for="SerialNo" class="form-control" />
+                        <span asp-validation-for="SerialNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TrainNo" class="control-label"></label>
+                        <input asp-for="TrainNo" class="form-control" />
+                        <span asp-validation-for="TrainNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PassengerName" class="control-label"></label>
+                        <input asp-for="PassengerName" class="form-control" />
+                        <span asp-validation-for="PassengerName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <input asp-for="Gender" class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Age" class="control-label"></label>
+                        <input asp-for="Age" class="form-control" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmailId" class="control-label"></label>
+                        <input asp-for="EmailId" class="form-control" />
+                        <span asp-validation-for="EmailId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    *@

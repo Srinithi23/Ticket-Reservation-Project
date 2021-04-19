@@ -1,0 +1,8 @@
+﻿body {
+    margin: 0;
+    background-image: url('../Images/New.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    background-position: center;
+}

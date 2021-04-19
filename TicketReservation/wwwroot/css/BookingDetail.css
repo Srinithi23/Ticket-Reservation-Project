@@ -1,0 +1,27 @@
+﻿body {
+    margin: 0;
+    background-image: url('../Images/BookingDetail.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px; /* You must set a specified height */
+    background-position: center;
+}
+.box {
+    background-color: cornflowerblue;
+    width: 500px;
+    border: 20px white;
+    padding: 50px;
+    margin: 30px;
+    font-family: "Comic Sans MS";
+    border-radius: 15px;
+}
+.registerBox input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    font-family: "sans-seriff";
+    border-radius: 15px;
+}
